@@ -7,18 +7,22 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
+    <style>
+        .mySlides {display:none;}
+    </style>
+
     <body>
         <div class="container text-center mt-5">
             <h1 class="display-6">From Music to Image, a Computacional Creativity Approach</h1>
             <p>In this project we are focused on trying to generate abstract images based on music scores.
-				<br>The system is under development and does not have a name yet. Most of the musics presented are only excerpts.
+                <br>The system is under development and does not have a name yet. Most of the musics presented are only excerpts.
             </p>
             <!--<a href="https://github.com/Kyntaz/sound-music">Check the code out!</a>-->
         </div>
 
         <h3 id="Images" align="center"> Experiments Week #5 (UNDER CONSTRUCTION)</h3>
 
-        <div class="container text-left">
+        <div class="container text-left" display="flex">
 
             <p> </p>
 
@@ -35,7 +39,13 @@
                     <audio controls>
                         <source src="semana5/Pavane/Maurice_Ravel_-_Pavane_pour_une_infante_dfunte.mp3">
                     </audio>
-                    <img src="semana5/Pavane/39Maurice_Ravel_-_Pavane_pour_une_infante_dfunte.png" width="1350" height="800">
+                    <div class="w3-content w3-display-container">
+                        <img src="semana5/Pavane/69Maurice_Ravel_-_Pavane_pour_une_infante_dfunte.png" class="mySlides" width="1350" height="800" style="width:1350, height:800">
+                        <img src="semana5/Pavane/39Maurice_Ravel_-_Pavane_pour_une_infante_dfunte.png" class="mySlides" width="1350" height="800" style="width:1350, height:800">
+                        
+                        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                    </div>
                 </div>
             </div>
             <div class="d-flex flex-wrap justify-content-around mb-5">
@@ -46,6 +56,7 @@
                         <source src="semana5/Wagner/Excerpt_Wagner_Ride_of_the_Valkyries_Piano_solo.mp3">
                     </audio>
                     <img src="semana5/Wagner/386Excerpt_Wagner_Ride_of_the_Valkyries_Piano_solo.png" width="1350" height="800">
+
                 </div>
             </div>
             <div class="d-flex flex-wrap justify-content-around mb-5">
@@ -56,7 +67,7 @@
                     <audio controls>
                         <source src="semana4/DebussyClairDeLune/Clair_de_Lune.mp3">
                     </audio>
-                    <img src="semana5/ClairDeLune/155clairDeLune.png" width="1350" height="800">
+                    <img src="semana5/ClairDeLune/97Clair_De_Lune.png" width="1350" height="800">
                 </div>
             </div>
 
@@ -64,7 +75,7 @@
 
         <h3 id="Images" align="center"> Experiments Week #4 </h3>
 
-		<div class="container text-left">
+        <div class="container text-left">
 
             <p> </p>
 
@@ -83,7 +94,7 @@
                     </audio>
                     <img src="semana4/Moonlight_Sonata/36Opus_27_No_2_Moonlight_Sonata_1st_movement.png" width="1350" height="800">
                 </div>
-            </div>	
+            </div>  
             <div class="d-flex flex-wrap justify-content-around mb-5">
                 <div id="image_5" class="mt-5 px-3 text-center">
                     <p> <strong> Ludwig Van Beethoven </strong>
@@ -93,11 +104,11 @@
                     </audio>
                     <img src="semana4/Alegria/409Ode_a_Alegria_Nona_Sinfonia.png" width="1350" height="800">
                 </div>
-            </div>  		
+            </div>          
             <div class="d-flex flex-wrap justify-content-around mb-5">
                 <div id="image_1" class="mt-5 px-3 text-center">
                     <p> <strong> Claude Debussy </strong>
-					<br>Clair de Lune from "Suite Bergamasque" L. 75 </p>
+                    <br>Clair de Lune from "Suite Bergamasque" L. 75 </p>
                     <audio controls>
                         <source src="semana4/DebussyClairDeLune/Clair_de_Lune.mp3">
                     </audio>
@@ -232,18 +243,36 @@
             </div>
         </div>
 
-
-
-
     </div>
        
-		
-		
+        
+        
         
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-	</body>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block";  
+        }
+    </script>
+
+    </body>
 </html>
