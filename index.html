@@ -20,15 +20,16 @@
             <!--<a href="https://github.com/Kyntaz/sound-music">Check the code out!</a>-->
         </div>
 
-        <h3 id="Images" align="center"> Experiments Week #6 (UNDER CONSTRUCTION) </h3>
+        <h3 id="Images" align="center"> Experiments Week #6 </h3>
 
         <div class="container text-left" display="flex">
 
             <p> </p>
 
-            <p align="justify"> <strong> Approach: </strong> </p>
-            <p align="justify"> <strong> Cross-Domain Association: </strong> We overlapped the color wheel, circle of fifths and chromatic circle to get the association between pitch and colors. HLS Color Model. Hue is related to the Pitch, Luminance to the Octave and S to the Volume of the note/chord being played. Whole circumferences are notes or chords that have the largest duration in the score. Music's BPM are related to the overall luminance of the image. Consonant chords have less irregularity than dissonant ones. This week, the elements' alpha value is directly related to the duration of the event in the whole score.  </p>
+            <p align="justify"> <strong> Approach: </strong> This week our approach is different. We are no longer using only circumferences but rather we decided to use different geometric shapes to represent all the instruments presented in the music, while we keep the same location for each element (according to its offset in the score). Our main shape is for the piano - circles - since it is the simplest instrument, in which every pitch can be played: characteristic that no other instrument has. Then, for each instrument the algorith founds, we introduce new shapes with <strong>n</strong> sides, starting with triangles. Moreover, each element size now is related to both the duration and BPM of the event in the score, since the lower the BPM, the smaller the element. For the alpha value of the elements, we have three different approaches, even though we only present one of them - the duration of the event. Lastly, this week we have  different images for different music eras, from Barroque to Romantic, considering the Classic proper. Different Autumn Leaves approaches are also presented. </p>
+            <p align="justify"> <strong> Cross-Domain Association: </strong> We overlapped the color wheel, circle of fifths and chromatic circle to get the association between pitch and colors. HLS Color Model. Hue is related to the Pitch, Luminance to the Octave and S to the Volume of the note/chord being played. Octaves' range is no more linear. Music's BPM are related to the overall luminance of the image: values between 60 and 160 BPM. Consonant chords have less irregularity than dissonant ones. This week, the elements' alpha value is directly related to the duration of the event in the whole score. Element's rotation are arbitrary.</p>
             <p align="justify"> <strong> How to read? </strong> Start in the left top corner. Each column represent one measure in the score, the elements in each column represent the measure' elements. Thus, up-down and then left-right.
+            <p align="justify"> <strong> Questions? </strong> Shall we consider the event consonance to define the irregularity of the shape? How to split the instrument in different families in a way music21 understands? What limits shall we consider to the music? And what about to the image sizes? How can we further represent the size of the elements (and alpha value) that better aproximates the musical characteristics?
  
             <p></p>
             <p><strong> Minimalism: </strong> 
