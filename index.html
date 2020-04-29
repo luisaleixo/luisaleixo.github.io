@@ -20,16 +20,15 @@
             <!--<a href="https://github.com/Kyntaz/sound-music">Check the code out!</a>-->
         </div>
 
-        <h3 id="Images" align="center"> Experiments Week #7 (UNDER CONSTRUCTION) </h3>
+        <h3 id="Images" align="center"> Experiments Week #7 </h3>
 
         <div class="container text-left" display="flex">
 
             <p> </p>
 
-            <p align="justify"> <strong> Approach: </strong>  </p>
-            <p align="justify"> <strong> Cross-Domain Association: </strong> </p>
-            <p align="justify"> <strong> How to read? </strong> Start in the left top corner. Each column represent one measure in the score, the elements in each column represent the measure' elements. Thus, up-down and then left-right.
-            <p align="justify"> <strong> Questions? </strong> Shall we consider the event consonance to define the irregularity of the shape? How to split the instrument in different families in a way music21 understands? What limits shall we consider to the music? And what about to the image sizes? How can we further represent the size of the elements (and alpha value) that better aproximates the musical characteristics?
+            <p align="justify"> <strong> Approach: </strong>  First of all, we decided to consider only the first 32 measures of each part in the score in order to better perceive music events represented in the image - with this approach we can perceive some structure in the music without having the sensation of unexpected cut. Then, we started by changing the values for the object's luminosity : we decided to have luminosity range values between 0.4 and 0.7 in a 0 (black) - 1 (white) scale mapped to different octaves. Later, we decided to change the size of different elements according to a given function that considers the duration of the event being analysed as well as the music' BPM. Morevoer, we decided to associate different shapes for different instruments that are being played, as well as its starting point in the screen. Finally, we did a lot of color and deformation tests to more approximate the images environment/mood to the given image. </p>
+            <p align="justify"> <strong> Cross-Domain Association: </strong> Lower octaves have lower luminosity values <-> higher octaves have higher luminosity values. Music with lower BPM are maped to objects with bigger size. Different instrument's families are mapped to different image shapes - according to the MIDI program change property. </p>
+            <p align="justify"> <strong> Questions? </strong> Shall we consider the event consonance to define the irregularity of the shape? How to split the instrument in different families in a way music21 understands? How can we further represent the size of the elements (and alpha value) that better aproximates the musical characteristics?
  
             <p></p>
   
@@ -41,7 +40,7 @@
                     <audio controls>
                         <source src="semana7/WIP_Mozarts_Oboe_Concerto_in_C_K314.mp3">
                     </audio>
-                    <img src="semana7/WIP_Mozarts_Oboe_Concerto_in_C_K314.png" width="1350" height="800">
+                    <img src="semana7/bwv3132.png" width="1350" height="800">
                 </div>
             </div> 
 
@@ -53,7 +52,19 @@
                     <audio controls>
                         <source src="semana7/Reverie_C2.mp3">
                     </audio>
-                    <img src="semana7/Reverie_C._Debussy_per_orchestra_scolastica_sobre2.png" width="1350" height="800">
+                    <img src="semana7/bwv2351.png" width="1350" height="800">
+                </div>
+            </div> 
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Ludwig Van Beethoven </strong>
+                    <br>Moonlight Sonata 1st Movement</p>
+                    <audio controls>
+                        <source src="semana7/Opus_27_No_2_Moonlight_Sonata_1st_movement.mp3">
+                    </audio>
+                    <img src="semana7/bwv1123.png" width="1350" height="800">
                 </div>
             </div> 
 
