@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+        <title>Image Generation</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="./static/css/template.css">
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+
+    <div>
+        <div class="container text-left" display="flex">
+            <label for="cars">Select a music:</label>
+
+            <select id="cars">
+              <option value="volvo">x1</option>
+              <option value="saab">x2</option>
+              <option value="opel">x3</option>
+              <option value="audi">x4</option>
+            </select>
+
+            <a href="{{ url_for('generate') }}" id=generate><button>Click me!</button></a>
+
+            <p></p>
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_container" class="mt-5 px-3 text-center">
+                    <!-- Write your comments here <audio controls>
+                        <source src="week_works/semana8/Flower_Duet_for_Flute_and_Violin.mp3">
+                    </audio>
+                    <img src="{{url_for('static', filename='ayrton_senna_movie_wallpaper_by_bashgfx-d4cm6x6.jpg')}}" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

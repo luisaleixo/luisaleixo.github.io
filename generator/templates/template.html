@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flask Parent Template</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
+
+</head>
+  <body>
+    <header>
+      <div class="container text-center mt-5">
+            <h1 class="display-6">From Music to Image, a Computacional Creativity Approach</h1>
+            <p>In this project we are focused on trying to generate abstract images based on music scores.
+                <br>The system is under development and does not have a name yet. Most of the musics presented are only excerpts.
+            </p>
+            <!--<a href="https://github.com/Kyntaz/sound-music">Check the code out!</a>-->
+        </div>
+    </header>
+
+{% block content %}
+{% endblock %}
+
+ </body>
+</html>
