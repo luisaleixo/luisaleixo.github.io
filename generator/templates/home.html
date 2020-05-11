@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
-        <title>Image Generation</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="./static/css/template.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-    {% extends "template.html" %}
-    {% block content %}
+    <title>Image Generation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./static/css/template.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% extends "template.html" %}
+{% block content %}
 
-    <div class="container text-left" display="flex">
-        <p></p>
+<div class="container text-left" display="flex">
+    <p></p>
 
-        <form id="myform" class="form-inline" method="POST" action="{{ url_for('test') }}">
-            <div class="form-group">
-                <div class="input-group">
+    <div class="d-flex flex-wrap justify-content-around mb-2">
+        <div>
+            <form id="myform" method="POST" action="{{ url_for('test') }}">
+                <div class="form-group">
+                    <div class="input-group">
 
-                      <select id="mydropdown" name="comp_select" class="selectpicker form-control" onchange="this.form.submit();">
-                          <option data-sort="1" selected="selected">Choose here</option>
-                          <option value="Antonio_Vivaldi_-_Four_Seasons_-_Winter_-_Second_Movement.mxl" data-sort="2">Antonio Vivaldi - Winter</option>
-                          <option value="Bach_-_Arioso_from_Cantata_BWV_156.mxl" data-sort="3">Bach - BWV 156</option>
-                          <option value="Brahms-Hungarian_Dance_No._5_4_hands.mxl" data-sort="4">Brahms - Hungarian Dance</option>
-                          <option value="Mazurka_in_F_Minor_for_String_Quartet.mxl" data-sort="5">Mazurka in F Minor for String Quartet</option>
+                        <select id="mydropdown" name="comp_select" class="selectpicker form-control"
+                                onchange="this.form.submit();">
+                            <option data-sort="1" selected="selected">Choose here</option>
+                            <option value="Antonio_Vivaldi_-_Four_Seasons_-_Winter_-_Second_Movement.mxl" data-sort="2">
+                                Antonio Vivaldi - Winter
+                            </option>
+                            <option value="Brahms-Hungarian_Dance_No._5_4_hands.mxl" data-sort="4">Brahms - Hungarian
+                                Dance
+                            </option>
+                            <option value="Mazurka_in_F_Minor_for_String_Quartet.mxl" data-sort="5">Mazurka in F Minor
+                                for
+                                String Quartet
+                            </option>
 
-                          <script>
+                            <script>
                                     window.onload = function() {
                                     var selItem = sessionStorage.getItem("SelItem");
                                     console.log(selItem);
@@ -38,32 +48,41 @@
                                         var selVal = $(this).val();
                                         sessionStorage.setItem("SelItem", selVal);
                                     });
+
+
+
+
+
                             </script>
 
-                      </select>
+                        </select>
+                    </div>
                 </div>
-          </div>
-        </form>
+            </form>
+            <div id="image_4" class="mt-3 text-center">
+                <audio controls>
+                    <source src="week_works/semana6/Haydn_Die__Schopfung_Mit_Wurd_und_Hoheit_angetan.mp3">
+                </audio>
+            </div>
 
-        <script>
-            $.ajax({
-                  url : '/generate', // the endpoint
-                  type : 'POST', // http method
-                  data : "[]" // data sent with the post request
-                  // handle a successful response
-                  success : function(data) {
-                  },
-        </script>
+            <!-- Trigger the modal with a button -->
+            <p></p>
+            <button class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Customize Associations
+            </button>
 
-        <a href="{{ url_for('generate') }}" id=generate><button style="margin-top: 10px" class="btn btn-info btn-lg">Generate!</button></a>
+            <a href="{{ url_for('generate') }}" id=generate>
+                <button class="btn btn-info btn-lg">Generate!</button>
+            </a>
+        </div>
+    </div>
 
-        <!-- Trigger the modal with a button -->
-        <p></p>
-        <button class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Customize Associations</button>
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
             <div class="modal-header">
                 <h4>Modal Header</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -71,23 +90,24 @@
             <div class="modal-body">
                 <p><strong>Here you can define the associations between instruments and shapes.</strong></p>
                 <ul>
-                {% for your_list_element in instruments %}
+                    {% for your_list_element in instruments %}
                     <li><strong>{{ your_list_element.name }}</strong></li>
                     <p></p>
-                  {% endfor %}
+                    {% endfor %}
                 </ul>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
-          </div>
         </div>
-      </div>
     </div>
 
+</div>
+</div>
 
-    {% endblock %}
-  </body>
+
+{% endblock %}
+</body>
 </html>
 
 
