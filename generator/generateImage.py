@@ -664,18 +664,20 @@ def finalDraw(bwv, bwv_c, name):
 
     return finalName
 
-def main():
-    initial = 40
-    deviation = 20
 
-    basedeforms = 1
-    finaldeforms = 3
+initial = 40
+deviation = 20
 
-    minshapes = 20
-    maxshapes = 25
+basedeforms = 1
+finaldeforms = 3
 
-    bwv = converter.parse("music_files/WIP_Mozarts_Oboe_Concerto_in_C_K314.mxl")
+minshapes = 20
+maxshapes = 25
+
+def main(music_file):
+
+    bwv = converter.parse("music_files/" + music_file)
     #bwv.show("text")
     bwv_c = bwv.chordify()
 
-    return finalDraw(bwv, bwv_c, "WIP_Mozarts_Oboe_Concerto_in_C_K314")
+    return finalDraw(bwv, bwv_c, music_file)
