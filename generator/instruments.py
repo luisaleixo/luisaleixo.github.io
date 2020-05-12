@@ -1,7 +1,7 @@
 from music21 import *
 
 def getInstrument(bwv):
-    bwv_file = converter.parse("music_files/" + bwv)
+    bwv_file = converter.parse("static/music_files/" + bwv)
 
     instruments = []
     for part in bwv_file.parts:

@@ -11,9 +11,14 @@ def home():
 @app.route("/" , methods=['GET', 'POST'])
 def test():
     select = request.form.get('comp_select')
-    instr = instruments.getInstrument(str(select))
-    session['select'] = str(select)
-    return render_template("home.html", instruments=instr)
+    print(str(select))
+    instr = instruments.getInstrument(str(select) + ".mxl")
+    session['select'] = str(select) + ".mxl"
+
+    music = str(select) + ".mp3"
+    print(music)
+
+    return render_template("home.html", instruments=instr, music = music)
 
 @app.route("/generate")
 def generate():
@@ -30,4 +35,4 @@ def about():
 if __name__ == "__main__":
     app.secret_key = 'super secret key'
     app.config['SESSION_TYPE'] = 'filesystem'
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=82)
