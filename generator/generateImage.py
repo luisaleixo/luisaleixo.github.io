@@ -676,7 +676,7 @@ maxshapes = 25
 
 def main(music_file):
 
-    bwv = converter.parse("music_files/" + music_file)
+    bwv = converter.parse("static/music_files/" + music_file)
     #bwv.show("text")
     bwv_c = bwv.chordify()
 

@@ -23,7 +23,6 @@ def test():
 @app.route("/generate")
 def generate():
     store = session.get('select')
-    print(store)
     image = generateImage.main(store)
     return render_template("about.html", variable = image)
 
