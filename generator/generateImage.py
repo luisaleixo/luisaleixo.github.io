@@ -3,6 +3,7 @@ import cairo, sys, argparse, copy, math, random
 import numpy as np
 import colorsys
 import math
+import json
 float_gen = lambda a, b: random.uniform(a, b)
 
 def getTimeSignature(event):
@@ -674,10 +675,19 @@ finaldeforms = 3
 minshapes = 20
 maxshapes = 25
 
-def main(music_file):
+def available_shapes():
+    shapes = ['circle', 'smaller circle', 'rectangle', 'rectanguar spot', 'bigger rectangular spot', 'circle spot', 'square', 'irregular square', 'rhombus']
+    return shapes
+
+def main(music_file, shape):
 
     bwv = converter.parse("static/music_files/" + music_file)
     #bwv.show("text")
     bwv_c = bwv.chordify()
 
-    return finalDraw(bwv, bwv_c, music_file)
+    print(shape)
+    for el in shape:
+        print(json.loads(el)['midi'])
+
+    #return finalDraw(bwv, bwv_c, music_file)
+    return 0
