@@ -50,4 +50,4 @@ def about():
 if __name__ == "__main__":
     app.secret_key = 'super secret key'
     app.config['SESSION_TYPE'] = 'filesystem'
-    app.run(host='0.0.0.0', port=82)
+    app.run(host='0.0.0.0', port=83)

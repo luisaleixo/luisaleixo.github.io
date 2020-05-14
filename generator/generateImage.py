@@ -540,6 +540,7 @@ def getShape(cr, shape_index, instr, event, location_x, location_y, size, colors
         if event.isConsonant is False:
             shape_points = deform(shape_points, 5, 5)
 
+    print(shape_points)
     shape_points = deform(shape_points, 2, 2)
     cr.set_source_rgba(colors[0], colors[1], colors[2], shapealpha)
     for i in range(len(shape_points)):
@@ -614,7 +615,6 @@ def finalDraw(bwv, bwv_c, name, all_shapes):
 
         for el in all_shapes:
             if part.getElementsByClass("Instrument")[0].midiProgram == int(json.loads(el)['midi']):
-                print("oi")
                 shape_index = int(json.loads(el)['shape'])
 
         # Now, since we already found the instruments, we're going to see if we're dealing with chords or notes.
@@ -666,6 +666,7 @@ def finalDraw(bwv, bwv_c, name, all_shapes):
                             # size = (event.beatStrength * 100)
 
                             # points
+                            print("Nota: " + str(shape_index))
                             getShape(cr, shape_index, part.getElementsByClass("Instrument")[0], event, location_x, location_y, size,
                                      colors, shapealpha)
 
@@ -692,7 +693,8 @@ def finalDraw(bwv, bwv_c, name, all_shapes):
                                             1 / timeSignature)
 
                                 # points
-                                getShape(cr, part.getElementsByClass("Instrument")[0], event, location_x, location_y,
+                                print("Acorde: " + str(shape_index))
+                                getShape(cr, shape_index, part.getElementsByClass("Instrument")[0], event, location_x, location_y,
                                          size, colors, shapealpha)
 
                                 # resize
@@ -717,7 +719,8 @@ minshapes = 20
 maxshapes = 25
 
 def available_shapes():
-    shapes = ['circle', 'smaller circle', 'rectangle', 'rectanguar spot', 'bigger rectangular spot', 'circle spot', 'square', 'irregular square', 'rhombus']
+    shapes = ['circle', 'small circle', 'rectangle', 'rectangular spot', 'big rectangular spot', 'circle spot',
+              '12 sides polygon', 'square', 'irregular square', 'rhombus']
     return shapes
 
 def main(music_file, shape):
