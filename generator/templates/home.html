@@ -102,7 +102,7 @@
                                         <select id="{{your_list_element.name}}" name="{{your_list_element.midi}}" class="selectpicker form-control" onchange="populateJson(this)">
                                             <option selected="selected" disabled hidden>Choose here</option>
                                             {% for this_shape in your_list_element.shapes %}
-                                                <option value = {{this_shape.shape}}> {{this_shape.shape}} </option>
+                                                <option value = {{this_shape.index}}> {{this_shape.shape}} </option>
                                             {% endfor %}
 
                                             <script>
