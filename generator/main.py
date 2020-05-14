@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request, session
+# -*- Coding: UTF-8 -*-
+#coding: utf-8
+
 import generateImage
 import instruments
 import shapes
-import json
+from flask import Flask, render_template, request, session
 
 app = Flask(__name__)
 
@@ -50,4 +52,4 @@ def about():
 if __name__ == "__main__":
     app.secret_key = 'super secret key'
     app.config['SESSION_TYPE'] = 'filesystem'
-    app.run(host='0.0.0.0', port=84)
+    app.run(debug=True)
