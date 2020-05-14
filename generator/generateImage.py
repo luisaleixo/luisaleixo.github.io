@@ -438,17 +438,17 @@ def rectangle(x_orig, y_orig, side):
 
     return oct
 
-def getShape(cr, instr, event, location_x, location_y, size, colors, shapealpha):
-    if instr.midiProgram >= 0 and instr.midiProgram <= 7:
-        shape_points = circle(location_x, location_y, size / 2, 0, 360)
+def shape_index_gen(index, cr, instr, event, location_x, location_y, size, colors, shapealpha):
+    if index == 0:
+        return circle(location_x, location_y, size / 2, 0, 360)
 
-    elif instr.midiProgram >= 8 and instr.midiProgram <= 15:
-        shape_points = circle(location_x, location_y, size / 4, 0, 360)  # smaller circle
+    elif index == 1:
+        return circle(location_x, location_y, size / 4, 0, 360)
 
-    elif instr.midiProgram >= 16 and instr.midiProgram <= 23:
-        shape_points = rectangle(location_x, location_y, size)
+    elif index == 2:
+        return rectangle(location_x, location_y, size)
 
-    elif instr.midiProgram >= 24 and instr.midiProgram <= 31:
+    elif index == 3:
         cr.set_source_rgba(colors[0], colors[1], colors[2], shapealpha / 2)
         shape = rectangle(location_x, location_y, size / 4)
         baseshape = deform(shape, 8, 6)
@@ -457,7 +457,7 @@ def getShape(cr, instr, event, location_x, location_y, size, colors, shapealpha)
         cr.fill()
         return
 
-    elif instr.midiProgram >= 32 and instr.midiProgram <= 39:
+    elif index == 4:
         cr.set_source_rgba(colors[0], colors[1], colors[2], shapealpha / 2)
         shape = rectangle(location_x, location_y, size)
         baseshape = deform(shape, 8, 6)
@@ -466,7 +466,7 @@ def getShape(cr, instr, event, location_x, location_y, size, colors, shapealpha)
         cr.fill()
         return
 
-    elif instr.midiProgram >= 40 and instr.midiProgram <= 47:
+    elif index == 5:
         shape = octagon(location_x, location_y, size / 2)
         baseshape = deform(shape, basedeforms, initial)
         cr.set_source_rgba(colors[0], colors[1], colors[2], 0.04)
@@ -480,25 +480,61 @@ def getShape(cr, instr, event, location_x, location_y, size, colors, shapealpha)
             cr.fill()
         return
 
-    elif instr.midiProgram >= 48 and instr.midiProgram <= 55:
+    elif index == 6:
         rotation = random.randint(0, 20)
-        shape_points = polygon(12, size, (rotation / 10) * math.pi, [location_x, location_y])
+        return polygon(12, size, (rotation / 10) * math.pi, [location_x, location_y])
+
+    elif index == 7:
+        rotation = random.randint(0, 20)
+        return polygon(4, size, (rotation / 10) * math.pi, [location_x, location_y])
+
+    elif index == 8:
+        rotation = random.randint(0, 20)
+        shape_points = polygon(4, size, (rotation / 10) * math.pi, [location_x, location_y])
+        return deform(shape_points, 8, 4)
+
+    elif index == 9:
+        return rhombus(location_x, location_y, size / 2)
+
+    elif index == 10:
+        rotation = random.randint(0, 20)
+        return polygon(3, size, (rotation / 10) * math.pi, [location_x, location_y])
+
+
+
+def getShape(cr, shape_index, instr, event, location_x, location_y, size, colors, shapealpha):
+    if instr.midiProgram >= 0 and instr.midiProgram <= 7:
+        shape_points = shape_index_gen(shape_index, cr, instr, event, location_x, location_y, size, colors, shapealpha)
+
+    elif instr.midiProgram >= 8 and instr.midiProgram <= 15:
+        shape_points = shape_index_gen(shape_index, cr, instr, event, location_x, location_y, size, colors, shapealpha)  # smaller circle
+
+    elif instr.midiProgram >= 16 and instr.midiProgram <= 23:
+        shape_points = shape_index_gen(shape_index, cr, instr, event, location_x, location_y, size, colors, shapealpha)
+
+    elif instr.midiProgram >= 24 and instr.midiProgram <= 31:
+        shape_points = shape_index_gen(shape_index, cr, instr, event, location_x, location_y, size, colors, shapealpha)
+
+    elif instr.midiProgram >= 32 and instr.midiProgram <= 39:
+        shape_points = shape_index_gen(shape_index, cr, instr, event, location_x, location_y, size, colors, shapealpha)
+
+    elif instr.midiProgram >= 40 and instr.midiProgram <= 47:
+        shape_points = shape_index_gen(shape_index, cr, instr, event, location_x, location_y, size, colors, shapealpha)
+
+    elif instr.midiProgram >= 48 and instr.midiProgram <= 55:
+        shape_points = shape_index_gen(shape_index, cr, instr, event, location_x, location_y, size, colors, shapealpha)
 
     elif instr.midiProgram >= 56 and instr.midiProgram <= 63:
-        rotation = random.randint(0, 20)
-        shape_points = polygon(4, size, (rotation / 10) * math.pi, [location_x, location_y])
+        shape_points = shape_index_gen(shape_index, cr, instr, event, location_x, location_y, size, colors, shapealpha)
 
     elif instr.midiProgram >= 64 and instr.midiProgram <= 71:
-        rotation = random.randint(0, 20)
-        shape_points = polygon(4, size, (rotation / 10) * math.pi, [location_x, location_y])
-        shape_points = deform(shape_points, 8, 4)
+        shape_points = shape_index_gen(shape_index, cr, instr, event, location_x, location_y, size, colors, shapealpha)
 
     elif instr.midiProgram >= 72 and instr.midiProgram <= 79:
-        shape_points = rhombus(location_x, location_y, size / 2)
+        shape_points = shape_index_gen(shape_index, cr, instr, event, location_x, location_y, size, colors, shapealpha)
 
     elif instr.midiProgram >= 80:
-        rotation = random.randint(0, 20)
-        shape_points = polygon(3, size, (rotation / 10) * math.pi, [location_x, location_y])
+        shape_points = shape_index_gen(shape_index, cr, instr, event, location_x, location_y, size, colors, shapealpha)
 
     if isinstance(event, chord.Chord):
         if event.isConsonant is False:
@@ -527,7 +563,7 @@ def getLuminance(event):
     elif event.octave >= 6:
         return 0.7
 
-def finalDraw(bwv, bwv_c, name):
+def finalDraw(bwv, bwv_c, name, all_shapes):
     width, height = 2700, 1600
 
     ims = cairo.ImageSurface(cairo.FORMAT_ARGB32, width, height)
@@ -575,6 +611,11 @@ def finalDraw(bwv, bwv_c, name):
 
         print("Instrument: " + part.getElementsByClass("Instrument")[0].instrumentName + " " + str(
             part.getElementsByClass("Instrument")[0].midiProgram))
+
+        for el in all_shapes:
+            if part.getElementsByClass("Instrument")[0].midiProgram == int(json.loads(el)['midi']):
+                print("oi")
+                shape_index = int(json.loads(el)['shape'])
 
         # Now, since we already found the instruments, we're going to see if we're dealing with chords or notes.
 
@@ -625,7 +666,7 @@ def finalDraw(bwv, bwv_c, name):
                             # size = (event.beatStrength * 100)
 
                             # points
-                            getShape(cr, part.getElementsByClass("Instrument")[0], event, location_x, location_y, size,
+                            getShape(cr, shape_index, part.getElementsByClass("Instrument")[0], event, location_x, location_y, size,
                                      colors, shapealpha)
 
                         if isinstance(event, chord.Chord):
@@ -689,5 +730,4 @@ def main(music_file, shape):
     for el in shape:
         print(json.loads(el)['midi'])
 
-    #return finalDraw(bwv, bwv_c, music_file)
-    return 0
+    return finalDraw(bwv, bwv_c, music_file, shape)
