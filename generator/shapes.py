@@ -1,3 +1,6 @@
+# -*- Coding: UTF-8 -*-
+#coding: utf-8
+
 import generateImage
 import json
 

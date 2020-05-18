@@ -1,5 +1,8 @@
 # -*- Coding: UTF-8 -*-
 #coding: utf-8
+from multiprocessing import Process, freeze_support
+
+from music21 import *
 
 import generateImage
 import instruments
@@ -10,11 +13,12 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-
+    shapes.shapes_array = []
     return render_template("home.html")
 
 @app.route("/" , methods=['GET', 'POST'])
 def test():
+    shapes.shapes_array = []
     select = request.form.get('comp_select')
 
     instr = instruments.getInstrument(str(select) + ".mxl")
@@ -52,4 +56,6 @@ def about():
 if __name__ == "__main__":
     app.secret_key = 'super secret key'
     app.config['SESSION_TYPE'] = 'filesystem'
+
+    freeze_support()
     app.run(debug=True)

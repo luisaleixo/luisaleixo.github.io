@@ -1,3 +1,6 @@
+# -*- Coding: UTF-8 -*-
+#coding: utf-8
+
 from music21 import *
 import cairo, sys, argparse, copy, math, random
 import numpy as np
@@ -439,34 +442,13 @@ def rectangle(x_orig, y_orig, side):
     return oct
 
 def shape_index_gen(index, cr, instr, event, location_x, location_y, size, colors, shapealpha):
-    if index == 0:
-        return circle(location_x, location_y, size / 2, 0, 360)
-
-    elif index == 1:
+    if index == 0: #small circle
         return circle(location_x, location_y, size / 4, 0, 360)
 
-    elif index == 2:
-        return rectangle(location_x, location_y, size)
+    elif index == 1: #circle
+        return circle(location_x, location_y, size / 2, 0, 360)
 
-    elif index == 3:
-        cr.set_source_rgba(colors[0], colors[1], colors[2], shapealpha / 2)
-        shape = rectangle(location_x, location_y, size / 4)
-        baseshape = deform(shape, 8, 6)
-        for i in range(len(baseshape)):
-            cr.line_to(baseshape[i][0], baseshape[i][1])
-        cr.fill()
-        return
-
-    elif index == 4:
-        cr.set_source_rgba(colors[0], colors[1], colors[2], shapealpha / 2)
-        shape = rectangle(location_x, location_y, size)
-        baseshape = deform(shape, 8, 6)
-        for i in range(len(baseshape)):
-            cr.line_to(baseshape[i][0], baseshape[i][1])
-        cr.fill()
-        return
-
-    elif index == 5:
+    elif index == 2: #circle spot
         shape = octagon(location_x, location_y, size / 2)
         baseshape = deform(shape, basedeforms, initial)
         cr.set_source_rgba(colors[0], colors[1], colors[2], 0.04)
@@ -480,25 +462,71 @@ def shape_index_gen(index, cr, instr, event, location_x, location_y, size, color
             cr.fill()
         return
 
-    elif index == 6:
+    elif index == 3: #triangle
         rotation = random.randint(0, 20)
-        return polygon(12, size, (rotation / 10) * math.pi, [location_x, location_y])
+        return polygon(3, size, (rotation / 10) * math.pi, [location_x, location_y])
 
-    elif index == 7:
+    elif index == 4: #rectangle
+        return rectangle(location_x, location_y, size)
+
+    elif index == 5: #rectangular spot
+        cr.set_source_rgba(colors[0], colors[1], colors[2], shapealpha / 2)
+        shape = rectangle(location_x, location_y, size / 4)
+        baseshape = deform(shape, 8, 6)
+        for i in range(len(baseshape)):
+            cr.line_to(baseshape[i][0], baseshape[i][1])
+        cr.fill()
+        return
+
+    elif index == 6: #big rectangular spot
+        cr.set_source_rgba(colors[0], colors[1], colors[2], shapealpha / 2)
+        shape = rectangle(location_x, location_y, size)
+        baseshape = deform(shape, 8, 6)
+        for i in range(len(baseshape)):
+            cr.line_to(baseshape[i][0], baseshape[i][1])
+        cr.fill()
+        return
+
+    elif index == 7: #square
         rotation = random.randint(0, 20)
         return polygon(4, size, (rotation / 10) * math.pi, [location_x, location_y])
 
-    elif index == 8:
+    elif index == 8: #irregular square
         rotation = random.randint(0, 20)
         shape_points = polygon(4, size, (rotation / 10) * math.pi, [location_x, location_y])
         return deform(shape_points, 8, 4)
 
-    elif index == 9:
+    elif index == 9: #rhombus
         return rhombus(location_x, location_y, size / 2)
 
-    elif index == 10:
+    elif index == 10: #pentagon
         rotation = random.randint(0, 20)
-        return polygon(3, size, (rotation / 10) * math.pi, [location_x, location_y])
+        return polygon(5, size, (rotation / 10) * math.pi, [location_x, location_y])
+
+    elif index == 11: #hexagon
+        rotation = random.randint(0, 20)
+        return polygon(6, size, (rotation / 10) * math.pi, [location_x, location_y])
+
+    elif index == 12: #heptagon
+        rotation = random.randint(0, 20)
+        return polygon(7, size, (rotation / 10) * math.pi, [location_x, location_y])
+
+    elif index == 13: #octogon
+        rotation = random.randint(0, 20)
+        return polygon(8, size, (rotation / 10) * math.pi, [location_x, location_y])
+
+    elif index == 14: #eneagon
+        rotation = random.randint(0, 20)
+        return polygon(9, size, (rotation / 10) * math.pi, [location_x, location_y])
+
+    elif index == 15: #decagon
+        rotation = random.randint(0, 20)
+        return polygon(12, size, (rotation / 10) * math.pi, [location_x, location_y])
+
+
+    elif index == 16: #10 + polygon
+        rotation = random.randint(0, 20)
+        return polygon(12, size, (rotation / 10) * math.pi, [location_x, location_y])
 
 
 
@@ -719,8 +747,10 @@ minshapes = 20
 maxshapes = 25
 
 def available_shapes():
-    shapes = ['circle', 'small circle', 'rectangle', 'rectangular spot', 'big rectangular spot', 'circle spot',
-              '12 sides polygon', 'square', 'irregular square', 'rhombus']
+
+    shapes = ['small circle', 'circle', 'circle spot', 'triangle', 'rectangle', 'rectangular spot', 'big rectangular spot', 'square', 'irregular square',
+              'rhombus', 'pentagon', 'hexagon', 'heptagon', 'octagon', 'eneagon', 'decagon', '10 sides+ polygon']
+
     return shapes
 
 def main(music_file, shape):
