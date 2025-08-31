@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Image Generation</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <style>
+        .mySlides {display:none;}
+    </style>
+
+    <body>
+        <div class="container text-center mt-5">
+            <h1 class="display-6">From Music to Image, a Computacional Creativity Approach</h1>
+            <p>In this project we are focused on trying to generate abstract images based on music scores.
+                <br> Most of the MIDI files presented are only excerpts of the respective musics.
+            </p>
+            <!--<a href="https://github.com/Kyntaz/sound-music">Check the code out!</a>-->
+        </div>
+
+        <p align="center"><strong > Contact me: <a href="mailto:luis.aleixo@tecnico.ulisboa.pt">luis.aleixo@tecnico.ulisboa.pt</a></strong></p>
+        <p align="center"><strong align="center"> <a href="https://linkedin.com/in/aleixo97">LinkedIn</a></strong></p>
+
+        <p align="center"> <strong> Video Presentation: </strong>
+
+        <div class="d-flex flex-wrap justify-content-around mb-1">
+            <video width="1350" height="800" controls>
+                <source src="./EvoMUSART6_197_ALEIXO.mp4" type="video/mp4">
+            </video>
+        </div> 
+
+        <h3 id="Images" align="center"> Survey Dataset </h3>
+        <div class="container text-left" display="flex">
+            <p> </p>
+            <p align="center"> The following pairs <strong>Music-Image</strong> were used in the avaliation process. Each image version is the <strong>Genetic Image</strong>.</p>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-around mb-5">
+            <div id="survey_1" class="mt-3 px-3 text-center">
+                <p> <strong> Handel </strong>
+                <br><i>Concerto No. 1 - 2. Largo</i></p>
+                <audio controls>
+                    <source src="./survey/Handel_Concerto/Handel_Concerto.mp3">
+                </audio>
+                <img src="./survey/Handel_Concerto/Handel_Concerto.png" width="1350" height="800">
+            </div>
+        </div> 
+
+        <p class="text-justify">
+        <div class="d-flex flex-wrap justify-content-around mb-5">
+            <div id="survey_1" class="mt-5 px-3 text-center">
+                <p> <strong> Handel </strong>
+                <br><i>The Royal Fireworks Suite - 3. La Paix</i></p>
+                <audio controls>
+                    <source src="./survey/Royal_Fireworks/Royal_Fireworks.mp3">
+                </audio>
+                <img src="./survey/Royal_Fireworks/Royal_Fireworks.png" width="1350" height="800">
+            </div>
+        </div> 
+
+        <p class="text-justify">
+        <div class="d-flex flex-wrap justify-content-around mb-5">
+            <div id="survey_1" class="mt-5 px-3 text-center">
+                <p> <strong> Mozart </strong>
+                <br><i>Symphony No. 40 - 3. Menuetto and Trio; Allegretto</i></p>
+                <audio controls>
+                    <source src="./survey/Symphony/symphony.mp3">
+                </audio>
+                <img src="./survey/Symphony/symphony.png" width="1350" height="800">
+            </div>
+        </div>
+        
+        <p class="text-justify">
+        <div class="d-flex flex-wrap justify-content-around mb-5">
+            <div id="survey_1" class="mt-5 px-3 text-center">
+                <p> <strong> Stravinsky </strong>
+                <br><i>The Firebird - 1. Introduction</i></p>
+                <audio controls>
+                    <source src="./survey/Stravinsky/Stravinsky.mp3">
+                </audio>
+                <img src="./survey/Stravinsky/Stravinsky.png" width="1350" height="800">
+            </div>
+        </div> 
+
+        <p></p>
+        <h3 class="mb-5" align="center"> The following Sections contain Images from the development phase </h3>
+
+        <h3 id="Images" align="center"> Experiments Week #11 </h3>
+
+        <div class="container text-left" display="flex">
+
+            <p> </p>
+
+            <p align="justify"> This week we continued the construction of our final dataset with music from different eras (Barroque, Classic, Romantic and Modernism on Classical and Jazz (Modernism) Music. We added more compositions as well as their midi files and correspondent youtube audio. In parallel with the construction of the dataset we dedicated a lot of time to continue the deployment our tool that allows the user to manipulate the cross-domain associations between instruments and shapes, as well as to see the final result. The beta version of the tool can be used <a href="https://creativity-2020.nw.r.appspot.com/">here</a>. The dataset can be seen <a href="https://docs.google.com/spreadsheets/d/1XqzGNycwrV3h9qfCt43sZHivEexTlDd8Y8TIEVk6keA/edit?usp=sharing">here</a>. We also did a research on Genetic Algorithms and, in parallel, we manipulated our generation algorithm to work with musical files without the 32 measures constraint, as well as the re-introduction of randomness when the user chooses "Generate Image" without any pre-decided association.</p>
+            <p></p>
+        </div>
+
+        <h3 id="Images" align="center"> Experiments Week #10 </h3>
+
+        <div class="container text-left" display="flex">
+
+            <p> </p>
+
+            <p align="justify"> This week we continued to build our final dataset with music from different epochs (Barroque, Classical, Romantic and Modernism) and different authors. We added more compositions as well as their midi files and correspondent youtube audio. In parallel with the construction of the dataset we dedicated a lot of time to deploy our tool that allows the user to manipulate the cross-domain associations between instruments and shapes, as well as to see the final result. The beta version of the tool can be used <a href="https://creativity-2020.nw.r.appspot.com/">here</a>. The dataset can be seen <a href="https://docs.google.com/spreadsheets/d/1XqzGNycwrV3h9qfCt43sZHivEexTlDd8Y8TIEVk6keA/edit?usp=sharing">here</a>.</p>
+            <p></p>
+        </div>
+
+        <h3 id="Images" align="center"> Experiments Week #9 </h3>
+
+        <div class="container text-left" display="flex">
+
+            <p> </p>
+
+            <p align="justify"> This week we started to build our final dataset with music from different epochs (Barroque, Classic, Romantic and Modernism) and different authors. In parallel with the construction of the dataset we decided to build one tool that allows the user to manipulate the cross-domain associations between instruments and shapes. The dataset can be seen <a href="https://docs.google.com/spreadsheets/d/1XqzGNycwrV3h9qfCt43sZHivEexTlDd8Y8TIEVk6keA/edit?usp=sharing">here</a>. This week we don't show any new images since our work was not concerned at generation.</p>
+            <p></p>
+        </div>
+
+        <h3 id="Images" align="center"> Experiments Week #8 </h3>
+
+        <div class="container text-left" display="flex">
+
+            <p> </p>
+
+            <p align="justify"> <strong> Approach: </strong> This week we did more size and color tests and started to correct some bugs from our previous approach: circles had one empty line in the middle; one of the sides of the poligons was not "properly deformed"; Correction of the screen' size and margin. Moreover, we started to learn a bit about Simple Term Fourier Transform in order to process the signal to distinguish between different instruments according to its harmonics. Finally we started to write our document and read about Genetic Algorithms.</p>
+            <p align="justify"> <strong> Cross-Domain Association: </strong> Lower octaves have lower luminosity values <-> higher octaves have higher luminosity values. Music with lower BPM are maped to objects with bigger size. Different instrument's families are mapped to different image shapes - according to the MIDI program change property. Time Signature: the lower the numerator, the bigger the shape. In resume: Harmony - Background; Melody - Elements; Rhythm - Sizes </p>
+            <p align="justify"> <strong> Questions? </strong> Shall we consider the event consonance to define the irregularity of the shape? Which associations should we do between instruments and shapes? We split our screen vertically according to the number of measures: how can we keep the ideia of continuity?
+ 
+            <p></p>
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Léo Delibes </strong>
+                    <br>Flower Duet : Flute, Violin</p>
+                    <audio controls>
+                        <source src="week_works/semana8/Flower_Duet_for_Flute_and_Violin.mp3">
+                    </audio>
+                    <img src="week_works/semana8/Flower_Duet_for_Flute_and_Violin.png.png" width="1350" height="800">
+                </div>
+            </div> 
+  
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Vivaldi </strong>
+                    <br>Winter Second Movement: Violin(2), Flute, Trumpet, Piano </p>
+                    <audio controls>
+                        <source src="week_works/semana8/Antonio_Vivaldi_-_Four_Seasons_-_Winter_-_Second_Movement.mp3">
+                    </audio>
+                    <img src="week_works/semana8/Antonio_Vivaldi_-_Four_Seasons_-_Winter_-_Second_Movement496.png" width="1350" height="800">
+                </div>
+            </div> 
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Johann Sebastian Bach </strong>
+                    <br> BWV 156 : Flute and Piano</p>
+                    <audio controls>
+                        <source src="week_works/semana8/Bach_-_Arioso_from_Cantata_BWV_156.mp3">
+                    </audio>
+                    <img src="week_works/semana8/Bach_-_Arioso_from_Cantata_BWV_156241.png" width="1350" height="800">
+                </div>
+            </div> 
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <br>Mazurka in F Minor : String Quartet - Violin(2), Viola, Violoncelo</p>
+                    <audio controls>
+                        <source src="week_works/semana8/Mazurka_in_F_Minor_for_String_Quartet.mp3">
+                    </audio>
+                    <img src="week_works/semana8/Mazurka_in_F_Minor_for_String_Quartet448.png" width="1350" height="800">
+                </div>
+            </div> 
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <br>Beatles Medley</p>
+                    <audio controls>
+                        <source src="week_works/semana8/Beatles_Medley.mp3">
+                    </audio>
+                    <img src="week_works/semana8/Beatles_Medley372.png" width="1350" height="800">
+                </div>
+            </div> 
+
+        <h3 id="Images" align="center"> Experiments Week #7 </h3>
+
+        <div class="container text-left" display="flex">
+
+            <p> </p>
+
+            <p align="justify"> <strong> Approach: </strong>  First of all, we decided to consider only the first 32 measures of each part in the score in order to better perceive music events represented in the image - with this approach we can perceive some structure in the music without having the sensation of unexpected cut. Then, we started by changing the values for the object's luminosity : we decided to have luminosity range values between 0.4 and 0.7 in a 0 (black) - 1 (white) scale mapped to different octaves. Later, we decided to change the size of different elements according to a given function that considers the duration of the event being analysed as well as the music' BPM. Morevoer, we decided to associate different shapes for different instruments that are being played, as well as its starting point in the screen. Finally, we did a lot of color and deformation tests to more approximate the images environment/mood to the given image. </p>
+            <p align="justify"> <strong> Cross-Domain Association: </strong> Lower octaves have lower luminosity values <-> higher octaves have higher luminosity values. Music with lower BPM are maped to objects with bigger size. Different instrument's families are mapped to different image shapes - according to the MIDI program change property. </p>
+            <p align="justify"> <strong> Questions? </strong> Shall we consider the event consonance to define the irregularity of the shape? How to split the instrument in different families in a way music21 understands? How can we further represent the size of the elements (and alpha value) that better aproximates the musical characteristics?
+ 
+            <p></p>
+  
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Mozart </strong>
+                    <br>Oboe Concert in C</p>
+                    <audio controls>
+                        <source src="week_works/semana7/WIP_Mozarts_Oboe_Concerto_in_C_K314.mp3">
+                    </audio>
+                    <img src="week_works/semana7/allshape500.png" width="1350" height="800">
+                </div>
+            </div> 
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> C. Debussy, arr. T. Argentieri </strong>
+                    <br>Reverie</p>
+                    <audio controls>
+                        <source src="week_works/semana7/Reverie_C2.mp3">
+                    </audio>
+                    <img src="week_works/semana7/bwv2351.png" width="1350" height="800">
+                </div>
+            </div> 
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Ludwig Van Beethoven </strong>
+                    <br>Moonlight Sonata 1st Movement</p>
+                    <audio controls>
+                        <source src="week_works/semana7/Opus_27_No_2_Moonlight_Sonata_1st_movement.mp3">
+                    </audio>
+                    <img src="week_works/semana7/bola406.png" width="1350" height="800">
+                </div>
+            </div> 
+
+        <h3 id="Images" align="center"> Experiments Week #6 </h3>
+
+        <div class="container text-left" display="flex">
+
+            <p> </p>
+
+            <p align="justify"> <strong> Approach: </strong> This week our approach is different. We are no longer using only circumferences but rather we decided to use different geometric shapes to represent all the instruments presented in the music, while we keep the same location for each element (according to its offset in the score). Our main shape is for the piano - circles - since it is the simplest instrument, in which every pitch can be played: characteristic that no other instrument has. Then, for each instrument the algorith founds, we introduce new shapes with <strong>n</strong> sides, starting with triangles. Moreover, each element size now is related to both the duration and BPM of the event in the score, since the lower the BPM, the smaller the element. For the alpha value of the elements, we have three different approaches, even though we only present one of them - the duration of the event. Lastly, this week we have  different images for different music eras, from Barroque to Romantic, considering the Classic proper. Different Autumn Leaves approaches are also presented. </p>
+            <p align="justify"> <strong> Cross-Domain Association: </strong> We overlapped the color wheel, circle of fifths and chromatic circle to get the association between pitch and colors. HLS Color Model. Hue is related to the Pitch, Luminance to the Octave and S to the Volume of the note/chord being played. Octaves' range is no more linear. Music's BPM are related to the overall luminance of the image: values between 60 and 160 BPM. Consonant chords have less irregularity than dissonant ones. This week, the elements' alpha value is directly related to the duration of the event in the whole score. Element's rotation are arbitrary.</p>
+            <p align="justify"> <strong> How to read? </strong> Start in the left top corner. Each column represent one measure in the score, the elements in each column represent the measure' elements. Thus, up-down and then left-right.
+            <p align="justify"> <strong> Questions? </strong> Shall we consider the event consonance to define the irregularity of the shape? How to split the instrument in different families in a way music21 understands? What limits shall we consider to the music? And what about to the image sizes? How can we further represent the size of the elements (and alpha value) that better aproximates the musical characteristics?
+ 
+            <p></p>
+            <p><strong> Minimalism: </strong> 
+  
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Terry Riley </strong>
+                    <br> In C </p>
+                    <audio controls>
+                        <source src="week_works/semana6/In_C.mp3">
+                    </audio>
+                    <img src="week_works/semana6/h- 1600 w- 2700In_C.png" width="1350" height="800">
+                </div>
+            </div> 
+
+            <p> <strong> Impressionism: </strong>
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Mussorgksy </strong>
+                    <br> Pictures at an Exhibition </p>
+                    <audio controls>
+                        <source src="week_works/semana6/Pictures_at_a_Exhibition.mp3">
+                    </audio>
+                    <img src="week_works/semana6/h- 1600 w- 2700Pictures_at_a_Exhibition.png" width="1350" height="800">
+                </div>
+            </div> 
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Debussy </strong>
+                    <br> Suite Bergamesque - Claire de Lune </p>
+                    <audio controls>
+                        <source src="week_works/semana6/Passepied_from_Suite_Bergamesque_-_C._Debussy.mp3">
+                    </audio>
+                    <img src="week_works/semana6/h- 1600 w- 2700Passepied_from_Suite_Bergamesque_-_C._Debussy.png" width="1350" height="800">
+                </div>
+            </div> 
+
+            <p><strong> Romantic Proper:</strong>
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Stravinsky </strong>
+                    <br> Spring Rounds </p>
+                    <audio controls>
+                        <source src="week_works/semana6/Spring_Rounds.mp3">
+                    </audio>
+                    <img src="week_works/semana6/h- 1600 w- 2700Spring_Rounds.png" width="1350" height="800">
+                </div>
+            </div> 
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Mahler </strong>
+                    <br> Symphony No. 5 </p>
+                    <audio controls>
+                        <source src="week_works/semana6/Mahler__Symphony_No._5_-_Trumpet_1_in_B-flat_-_Excerpt_2.mp3">
+                    </audio>
+                    <img src="week_works/semana6/h- 1600 w- 2700Mahler__Symphony_No._5_-_Trumpet_1_in_B-flat_-_Excerpt_2.png" width="1350" height="800">
+                </div>
+            </div>  
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Elgar </strong>
+                    <br> In the Dawn </p>
+                    <audio controls>
+                        <source src="week_works/semana6/In_the_Dawn.mp3">
+                    </audio>
+                    <img src="week_works/semana6/h- 1600 w- 2700In_the_Dawn.png" width="1350" height="800">
+                </div>
+            </div>  
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Brahms </strong>
+                    <br> Hungarian Dance</p>
+                    <audio controls>
+                        <source src="week_works/semana6/Brahms-Hungarian_Dance_No._5_4_hands.mp3">
+                    </audio>
+                    <img src="week_works/semana6/h- 1600 w- 2700Brahms-Hungarian_Dance_No._5_4_hands.png" width="1350" height="800">
+                </div>
+            </div>  
+
+            <p> <strong>Romantic Transition: </strong>
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Ludwig Van Beethoven </strong>
+                    <br> Sinfonia n.º 9</p>
+                    <audio controls>
+                        <source src="week_works/semana6/O_de_Alegria.mp3">
+                    </audio>
+                    <img src="week_works/semana6/h- 1600 w- 2700O_de_Alegria.png" width="1350" height="800">
+                </div>
+            </div>
+
+            <p><strong>Classic Proper: </strong>
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Haydn </strong>
+                    <br> Symphony </p>
+                    <audio controls>
+                        <source src="week_works/semana6/Haydn_Die__Schopfung_Mit_Wurd_und_Hoheit_angetan.mp3">
+                    </audio>
+                    <img src="week_works/semana6/h- 1600 w- 2700Haydn_Die__Schopfung_Mit_Wurd_und_Hoheit_angetan.png" width="1350" height="800">
+                </div>
+            </div>
+
+            <p class="text-justify">
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Mozart </strong>
+                    <br>Oboe Concert in C</p>
+                    <audio controls>
+                        <source src="week_works/semana6/WIP_Mozarts_Oboe_Concerto_in_C_K314.mp3">
+                    </audio>
+                    <img src="week_works/semana6/h- 1600 w- 2700WIP_Mozarts_Oboe_Concerto_in_C_K314.png" width="1350" height="800">
+                </div>
+            </div>
+
+            <p> <strong>Barroque Music: </strong>
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Vivaldi </strong>
+                    <br>Winter</p>
+                    <audio controls>
+                        <source src="week_works/semana6/Vivaldi Winter.mp3">
+                    </audio>
+                    <img src="week_works/semana6/h- 1600 w- 2700Vivaldi Winter.png" width="1350" height="800">
+                </div>
+            </div>
+
+            <p> <strong> Previous Approaches: </strong>
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Léo Delibes </strong>
+                    <br>Flower Duet </p>
+                    <audio controls>
+                        <source src="week_works/semana6/FlowerDuet/Flower_Duet_for_Flute_and_Violin.mp3">
+                    </audio>
+                    <img src="week_works/semana6/FlowerDuet/h- 1600 w- 2700Flower_Duet_for_Flute_and_Violin.png" width="1350" height="800">
+
+                </div>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Glen Miller </strong>
+                    <br>In The Mood </p>
+                    <audio controls>
+                        <source src="week_works/semana6/inTheMood/In_The_Mood_-_Glen_Miller_Orchestra.mp3">
+                    </audio>
+                    <img src="week_works/semana6/inTheMood/h- 1600 w- 2700In_The_Mood_-_Glen_Miller_Orchestra.png" width="1350" height="800">
+
+                </div>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_1" class="mt-5 px-3 text-center">
+                    <p> <strong> Claude Debussy </strong>
+                    <br>Clair de Lune from "Suite Bergamasque" L. 75 </p>
+                    <audio controls>
+                        <source src="week_works/semana6/Clair/Clair_de_Lune.mp3">
+                    </audio>
+                    <img src="week_works/semana6/Clair/h- 1600 w- 2700Clair_de_Lune.png" width="1350" height="800">
+                </div>
+            </div> 
+
+            <p> <strong> Different Approaches for Autumn Leaves </strong>
+
+            <p class="text-justify">
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Bill Evans </strong>
+                    <br>Autumn Leaves</p>
+                    <audio controls>
+                        <source src="week_works/semana6/Bill_Evans_on_Autunm_Leaves_From_the_Album_Portrait_in_Jazz.mp3">
+                    </audio>
+                    <img src="week_works/semana6/h- 1600 w- 2700Bill_Evans_on_Autunm_Leaves_From_the_Album_Portrait_in_Jazz.png" width="1350" height="800">
+
+                </div>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Cannonball Adderley </strong>
+                    <br>Autumn Leaves</p>
+                    <audio controls>
+                        <source src="week_works/semana6/AutumnLeaves_milesIntro.mp3">
+                    </audio>
+                    <img src="week_works/semana6/h- 1600 w- 2700AutumnLeaves_milesIntro.png" width="1350" height="800">
+
+                </div>
+            </div>
+
+        <h3 id="Images" align="center"> Experiments Week #5 </h3>
+
+        <div class="container text-left" display="flex">
+
+            <p> </p>
+
+            <p align="justify"> <strong> Approach: </strong> This week we decided to keep on going with the approach of analyzing rather the time instance than the instruments and parts individualy. We kept analysing color schemas and possible new associations that could be made in order to perceive more musical characteristics in the generated artefacts. By styding the shape's deformation algorithm, we tried to start drawing our sketches with another paiting style - Crayon - which introduces more abstraction into the image. Furthermore, now the position of each element on the image is related to the offset of the event that is being analysed - either chords (vertically), or measures (horizontally) - which results (in my opinion) in less correlation between music and image. </p>
+            <p align="justify"> <strong> Cross-Domain Association: </strong> We overlapped the color wheel, circle of fifths and chromatic circle to get the association between pitch and colors. HLS Color Model. Hue is related to the Pitch, Luminance to the Octave and S to the Volume of the note/chord being played. Whole circumferences are notes or chords that have the largest duration in the score. Music's BPM are related to the overall luminance of the image. Consonant chords have less irregularity than dissonant ones. This week, the elements' alpha value is directly related to the duration of the event in the whole score.  </p>
+            <p align="justify"> <strong> How to read? </strong> Start in the left top corner. Each column represent one measure in the score, the elements in each column represent the measure' elements. Thus, up-down and then left-right.
+
+            <p class="text-justify">
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Autumn Leaves</strong>
+                    <br>Piano Jazz</p>
+                    <audio controls>
+                        <source src="week_works/semana5/autumn/Autumn_Leaves_Jazz_Piano.mp3">
+                    </audio>
+                    <img src="week_works/semana5/autumn/247Autumn_Leaves_Jazz_Piano.png" width="1350" height="800">
+                    <p> The previous image was generated considering only full circumferences, since we're working with Jazz music.</p>
+
+                </div>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Maurice Ravel </strong>
+                    <br>Pavane - Pour Une Infante Défunte</p>
+                    <audio controls>
+                        <source src="week_works/semana5/Pavane/Maurice_Ravel_-_Pavane_pour_une_infante_dfunte.mp3">
+                    </audio>
+                    <div class="w3-content w3-display-container">
+                        <img src="week_works/semana5/Pavane/69Maurice_Ravel_-_Pavane_pour_une_infante_dfunte.png" class="mySlides" width="1350" height="800" style="width:1350, height:800">
+                        <img src="week_works/semana5/Pavane/39Maurice_Ravel_-_Pavane_pour_une_infante_dfunte.png" class="mySlides" width="1350" height="800" style="width:1350, height:800">
+                        
+                        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                    </div>
+                    <p> Here we can see the differences that the alpha-value in the color introduces. Previously, this value was directly related to the octave of the event being analyzed - the octave of the root in case of chords, the octave of the pitch in case of notes. Now, it is related to the duration of the event. Furthermore, we changed the angle of the semicircle in order to take only into account the duration of the measure in analysis. </p> 
+                </div>
+            </div>
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Richard Wagner </strong>
+                    <br>Ride of the Valkyries - From Act III of the Opera "Die Walkure"</p>
+                    <audio controls>
+                        <source src="week_works/semana5/Wagner/Excerpt_Wagner_Ride_of_the_Valkyries_Piano_solo.mp3">
+                    </audio>
+                    <img src="week_works/semana5/Wagner/386Excerpt_Wagner_Ride_of_the_Valkyries_Piano_solo.png" width="1350" height="800">
+
+                </div>
+            </div>
+            
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_1" class="mt-5 px-3 text-center">
+                    <p> <strong> Johann Sebastian Bach </strong>
+                    <br> BWV 394 — Chorale, O Welt, sieh hier dein Leben</p>
+                    <audio controls>
+                        <source src="week_works/semana5/bach/bwv394.mp3">
+                    </audio>
+                    <img src="week_works/semana5/bach/33bwv394.png" width="875" height="875">
+                </div>
+            </div>
+
+        </div>
+
+        <h3 id="Images" align="center"> Experiments Week #4 </h3>
+
+        <div class="container text-left">
+
+            <p> </p>
+
+            <p align="justify"> <strong> Approach: </strong>This week our approach was related to circumferences. The analysis of the music score is no more related to the part and measure sequences, but to the time instance of the music. This way, the music is analyzed as a whole in which time represents circumferences. In each moment, the algorithm searches for notes and chords that are played at the same time instance, merging all together in circumferences and semi-circunferences with the size directly related to the duration of each element. </p>
+            <p align="justify"> <strong> Cross-Domain Association: </strong> We overlapped the color wheel, circle of fifths and chromatic circle to get the association between pitch and colors. HLS Color Model. Hue is related to the Pitch, Luminance to the Octave and S to the Volume of the note/chord being played. Whole circumferences are notes or chords that have the largest duration in the score. Music's BPM are related to the overall luminance of the image.</p>
+            <p align="justify"> <strong> How to read? </strong> Start in the left top corner. Each column represent one measure in the score, the elements in each column represent the measure' elements. Thus, up-down and then left-right.
+
+            <p class="text-justify">
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_4" class="mt-5 px-3 text-center">
+                    <p> <strong> Ludwig Van Beethoven </strong>
+                    <br>Moonlight Sonata 1st Movement </p>
+                    <audio controls>
+                        <source src="week_works/semana4/Moonlight_Sonata/Opus_27_No_2_Moonlight_Sonata_1st_movement.mp3">
+                    </audio>
+                    <img src="week_works/semana4/Moonlight_Sonata/36Opus_27_No_2_Moonlight_Sonata_1st_movement.png" width="1350" height="800">
+                </div>
+            </div>  
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_5" class="mt-5 px-3 text-center">
+                    <p> <strong> Ludwig Van Beethoven </strong>
+                    <br> Sinfonia n.º 9</p>
+                    <audio controls>
+                        <source src="week_works/semana4/Alegria/Ode_a_Alegria_Nona_Sinfonia.mp3">
+                    </audio>
+                    <img src="week_works/semana4/Alegria/409Ode_a_Alegria_Nona_Sinfonia.png" width="1350" height="800">
+                </div>
+            </div>          
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_1" class="mt-5 px-3 text-center">
+                    <p> <strong> Claude Debussy </strong>
+                    <br>Clair de Lune from "Suite Bergamasque" L. 75 </p>
+                    <audio controls>
+                        <source src="week_works/semana4/DebussyClairDeLune/Clair_de_Lune.mp3">
+                    </audio>
+                    <img src="week_works/semana4/DebussyClairDeLune/433Clair_de_Lune.png" width="1350" height="800">
+                </div>
+            </div>
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_2" class="mt-5 px-3 text-center">
+                    <p> <strong> Claude Debussy </strong>
+                    <br>Suite Bergamasque - I. Prelude</p>
+                    <audio controls>
+                        <source src="week_works/semana4/DebussySuite/Debussy_-_Suite_Bergamasque_-_I._Prelude.mp3">
+                    </audio>
+                    <img src="week_works/semana4/DebussySuite/260Debussy_-_Suite_Bergamasque_-_I._Prelude_excerpt.png" width="1350" height="800">
+                </div>
+            </div>
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_3" class="mt-5 px-3 text-center">
+                    <p> <strong> Claude Debussy </strong>
+                    <br>Images - Reflets dans l'eau</p>
+                    <audio controls>
+                        <source src="week_works/semana4/DebussyImages/Debussy_-_Images_Reflets_dans_leau.mp3">
+                    </audio>
+                    <img src="week_works/semana4/DebussyImages/359Debussy_-_Images_Reflets_dans_leau_excerpt.png" width="1350" height="800">
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3 id="week3" align="center"> Experiments Week #3 </h3>
+
+            <div class="container text-left">
+                <p class="text-justify">
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_6" class="mt-5 px-3 text-center">
+                    <p> <strong> Johann Sebastian Bach </strong>
+                    <br> BWV 66.6 — Cantata, Erfreut euch, ihr Herzen</p>
+                    <audio controls>
+                        <source src="week_works/semana3/bwv66.6.mp3">
+                    </audio>
+                    <img src="week_works/semana3/66.6.png" width="875" height="875">
+                </div>
+            </div> 
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_7" class="mt-5 px-3 text-center">
+                    <p> <strong> Johann Sebastian Bach </strong>
+                    <br> BWV 16.6 — Cantata, Herr Gott, dich loben wir </p>
+                    <audio controls>
+                        <source src="week_works/semana3/bwv16.6.mp3">
+                    </audio>
+                    <img src="week_works/semana3/16.6.png" width="875" height="875">
+                    <p>Another Approach:</p>
+                    <img src="week_works/semana3/16.6b.png" width="875" height="875">
+                </div>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_8" class="mt-5 px-3 text-center">
+                    <p> <strong> Johann Sebastian Bach </strong>
+                    <br> BWV 300 — Chorale, Du großer Schmerzensmann</p>
+                    <audio controls>
+                        <source src="week_works/semana3/bwv300.mp3">
+                    </audio>
+                    <img src="week_works/semana3/300.png" width="875" height="875">
+                </div>
+            </div>
+        </div>
+
+
+        <div>
+            <h3 id="week2" align="center"> Experiments Week #2 </h3>
+
+            <div class="container text-left">
+                <p class="text-justify">
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_9" class="mt-5 px-3 text-center">
+                    <p> <strong> Johann Sebastian Bach </strong>
+                    <br> BWV 66.6 — Cantata, Erfreut euch, ihr Herzen</p>
+                    <audio controls>
+                        <source src="week_works/semana2/bwv66.6.mp3">
+                    </audio>
+                    <img src="week_works/semana2/66.6.png" width="875" height="875">
+                </div>
+            </div> 
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_10" class="mt-5 px-3 text-center">
+                    <p> <strong> Johann Sebastian Bach </strong>
+                    <br> BWV 300 — Chorale, Du großer Schmerzensmann</p>
+                    <audio controls>
+                        <source src="week_works/semana2/bwv300.mp3">
+                    </audio>
+                    <img src="week_works/semana2/300.png" width="875" height="875">
+                </div>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_10" class="mt-5 px-3 text-center">
+                    <p> <strong> Johann Sebastian Bach </strong>
+                    <br> BWV 1.6 — Cantata, Wie schön leuchtet der Morgenstern</p>
+                    <audio controls>
+                        <source src="week_works/semana2/bwv1.6.mp3">
+                    </audio>
+                    <img src="week_works/semana2/1.6.png" width="875" height="875">
+                </div>
+            </div>
+
+
+        </div>
+
+        <div>  
+
+            <h3 id="week1" align="center"> Early Experiments - Week #1</h3>
+
+            <div class="container text-left">
+                <p class="text-justify">
+
+            <div class="d-flex flex-wrap justify-content-around mb-5">
+                <div id="image_11" class="mt-5 px-3 text-center">
+                    <p> <strong> Johann Sebastian Bach </strong>
+                    <br> BWV 1.6 — Cantata, Wie schön leuchtet der Morgenstern</p>
+                    <audio controls>
+                        <source src="week_works/semana2/bwv1.6.mp3">
+                    </audio>
+                    <img src="week_works/early/1.png" width="1000" height="800">
+                    <p> Another Approach: </p>
+                    <img src="week_works/early/2.png" width="1000" height="800">
+                </div>
+            </div>
+        </div>
+
+    </div>
+       
+        
+        
+        
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block";  
+        }
+    </script>
+
+    </body>
+</html>
